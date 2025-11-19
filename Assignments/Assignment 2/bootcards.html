@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Legends</title>
+    <style>
+        /* --- RESET & BASICS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Modified body to allow sticky footer */
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Forces footer to bottom */
+        }
+
+        /* --- HEADER STYLES (NEW) --- */
+        header {
+            background-color: #1a237e; /* Matches your theme color */
+            color: white;
+            padding: 0 40px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky; /* Keeps header at top while scrolling */
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #e91e63; /* Matches your accent color */
+        }
+
+        /* --- MAIN CONTENT --- */
+        main {
+            flex: 1; /* Pushes footer down */
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a237e;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- EXISTING CARD STYLES --- */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 300px; /* Adjusted height slightly for better aspect ratio */
+            object-fit: cover;
+            object-position: top;
+            border-bottom: 4px solid #1a237e;
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .player-name {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .player-role {
+            color: #e91e63;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .player-bio {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .stats-btn {
+            background-color: #1a237e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .stats-btn:hover {
+            background-color: #3949ab;
+        }
+
+        /* --- FOOTER STYLES (NEW) --- */
+        footer {
+            background-color: #121858; /* Slightly darker than header */
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 600px) {
+            .card {
+                width: 100%;
+            }
+            
+            /* Mobile Nav adjustments */
+            header {
+                padding: 0 20px;
+            }
+            
+            nav ul {
+                display: none; /* Simple hide for mobile, or you can make a hamburger menu */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🏏 CRIC-INFO</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Matches</a></li>
+                <li><a href="#">Players</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Legends of Cricket</h1>
+
+        <div class="card-container">
+
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/27/59/2a/27592a992de78e5c39c678a78c34cce3.jpg" alt="Virat Kohli" class="card-image">
+                <div class="card-content">
+                    <h2 class="player-name">Virat Kohli</h2>
+                    <span class="player-role">Top Order Batsman</span>
+                    <p class="player-bio">
+                        Known as "King Kohli," he is regarded as one of the greatest batsmen of all time, holding numerous records in ODI and Test cricket for India.
+                    </p>
+                    <button class="stats-btn">View Stats</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_960,q_50/lsci/db/PICTURES/CMS/131000/131064.jpg" alt="MS Dhoni" class="card-image">
+                <div class="card-content">
+                    <h2 class="player-name">MS Dhoni</h2>
+                    <span class="player-role">Wicketkeeper Batsman</span>
+                    <p class="player-bio">
+                        "Captain Cool" led India to victory in the 2007 T20 World Cup, 2011 ODI World Cup, and 2013 Champions Trophy. Famous for his finishing skills.
+                    </p>
+                    <button class="stats-btn">View Stats</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn.britannica.com/11/271611-050-6CAD4D54/Indian-Cricketer-Sachin-Tendulkar-Raises-Bat-On-Scoring-Century-During-Group-B-ICC-World-Cup-Cricket-Match-Between-India-And-South-Africa-Nagpur-March-12-2011.jpg" alt="Sachin Tendulkar" class="card-image">
+                <div class="card-content">
+                    <h2 class="player-name">Sachin Tendulkar</h2>
+                    <span class="player-role">Legendary Batsman</span>
+                    <p class="player-bio">
+                        Known as the "God of Cricket," Sachin has the most runs in international cricket history and is the only player to score one hundred international centuries.
+                    </p>
+                    <button class="stats-btn">View Stats</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Cricket Legends Tribute. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
